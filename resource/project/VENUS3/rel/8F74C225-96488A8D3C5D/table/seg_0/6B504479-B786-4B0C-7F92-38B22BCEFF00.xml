@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6B504479-B786-4B0C-7F92-38B22BCEFF00" name="TB_LIKE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:40:52 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LIKE_CODE" id="3A22D58A-B943-3372-2B1E-4FE0C783DBEC">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:43:42 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_CST" id="0225CE61-C4A8-84CC-3550-4E2A873CC81D">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:41:52 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0D242653-A9CB-0E4C-03A2-F6F01BF926F9" referredColumn="F44F3AFA-B61D-3CC5-1302-084966FB4FC4"/>
+</associations>
+</Column>
+<Column name="SEQ_SLE" id="3CAD8F58-8816-9B23-0A54-51E0330D1896">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:42:37 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CA3DFD4D-5A72-7EA3-08FA-6DB543736EB3" referredColumn="2CED85B8-D03C-0288-3538-301ED059E97E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="152C08C1-BB65-78F5-805A-79E2979EA657" name="PK_LIKE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:40:52 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A22D58A-B943-3372-2B1E-4FE0C783DBEC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D029303C-597B-962A-9CA3-30E6FFF12D4B" name="FK1_LIKE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:41:52 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0225CE61-C4A8-84CC-3550-4E2A873CC81D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97E67438-2A24-A99A-0A79-B761FB123E4F" name="FK2_LIKE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:42:37 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3CAD8F58-8816-9B23-0A54-51E0330D1896"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

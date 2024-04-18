@@ -1,0 +1,14 @@
+﻿{
+  "Name": "[구매 현황(배송 포함)]",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "5qlqmgqLP0C-CSrmcqy94g",
+  "Reference": "ugYxiKjK80GLXniCOJh7EQ/5qlqmgqLP0C-CSrmcqy94g",
+  "ParentRef": "ugYxiKjK80GLXniCOJh7EQ/bL8eyaRp9EOG1EKDRxHfdA",
+  "Created": "2024-04-12T00:43:56.4504342Z",
+  "Updated": "2024-04-12T00:43:56.4504342Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=23.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

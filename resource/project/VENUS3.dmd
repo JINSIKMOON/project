@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="VENUS3" id="358F7711-35F1-262A-E0A3-C7D90A3ACDC9" version="3.5">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 01:57:21 UTC</createdTime>
+<ownerDesignName>venus</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>358F7711-35F1-262A-E0A3-C7D90A3ACDC9</designId>
+</OSDM_Design>

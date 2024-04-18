@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.cart.CartDetail">
+
+	<select id="select" parameterType="cartMstDto" resultType="cartDtlDto">
+		SELECT
+			tb_cart_dtl.PRD_NM
+			, tb_cart_dtl.SEQ_IMG
+			, tb_cart_dtl.SEQ_BUY_MST
+			, tb_cart_dtl.PRICE
+			, tb_cart_dtl.COUNT
+		FROM
+			TB_CART_DTL			tb_cart_dtl
+		WHERE
+			tb_cart_dtl.SEQ_CART_MST	= #{seq_cart_mst}
+	</select>
+	
+	<insert id="insert" parameterType="cartDtlDto">
+		INSERT INTO TB_CART_DTL
+			(SEQ_CART_DTL, SEQ_CART_MST, SEQ_PRD, SEQ_SLE, CT_PRICE, CT_COUNT, FLG_DELETE,DT_CRE)
+		VALUES
+			(#{seq_cart_dtl}, #{seq_cart_mst}, #{seq_prd}, #{seq_sle}, #{ct_price}, #{ct_count}, 'N', SYSDATE)
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_CART_DTL.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

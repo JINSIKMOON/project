@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.login.Login">
+	
+	<select id="loginProc" parameterType="java.lang.String" resultType="customerDto">
+		SELECT
+			SEQ_CST
+			, ID
+			, CST_NM
+			, PASSWD
+		FROM
+			TB_CST
+		WHERE
+			ID			= #{id}
+			AND ROWNUM	= 1
+	</select>
+	
+</mapper>

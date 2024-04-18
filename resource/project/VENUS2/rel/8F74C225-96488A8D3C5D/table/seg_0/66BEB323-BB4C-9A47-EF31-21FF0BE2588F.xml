@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="66BEB323-BB4C-9A47-EF31-21FF0BE2588F" name="TB_BUY_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_BUY_MST" id="91024616-C180-9D6F-B84D-CD73FD983E48">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매 마스터 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<ownDataTypeParameters>,19,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_CST" id="17DD8FA7-142C-5527-13EA-5533386C1FF1">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:38:34 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4B5050D-31EC-42BD-223F-0143C80B6604" referredColumn="F44F3AFA-B61D-3CC5-1302-084966FB4FC4"/>
+</associations>
+</Column>
+<Column name="BUY_INFO" id="FD8CCF23-E501-766E-CFDC-A2E614DAD1DB">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매 정보]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUY_T_COUNT" id="E422B489-560F-2B93-E236-B005EDF485F6">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매 총 수량]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUY_T_PRICE" id="B34FD7C3-C26D-C7C6-C721-FB4768BA38D1">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매 총 가격]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_STATE_PAY" id="19698539-EA68-946C-6AD7-74C3ADD709F2">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[결제 상태 코드(결제 전:N, 결제 완료: Y, 결제 취소:C)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_STATE_DELIVERY" id="DBBE9FF1-BB06-5675-70A2-3C4602E792F3">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[배송 상태(P: 준비중, D:배송중, Y: 배송 완료)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="3D64888E-4577-518E-349E-C0DEEF3FE9A9">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPT" id="4387B68E-8174-233D-A8EF-B02DBBB8FB44">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4FA79920-7D6C-FA8B-A73F-B9AA59D74183" name="PK_BUY_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:26 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91024616-C180-9D6F-B84D-CD73FD983E48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6D01A920-B3A9-DA21-972E-378E4B512DCC" name="FK1_BUY_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:38:34 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17DD8FA7-142C-5527-13EA-5533386C1FF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

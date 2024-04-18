@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="13937C1D-7CB2-B4E9-FB12-1C4A08E74710" name="TB_SLE_EVAL">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-26 08:05:43 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_SLE_EVAL" id="1C3432B3-3D19-8AAF-6CE8-4A42DF7EEE3D">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-26 08:09:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[판매 상품 평점 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_SLE" id="87C95146-E1B8-A462-97A6-07F6BDFCDBC8">
+<createdBy>USER</createdBy>
+<createdTime>2024-03-29 08:53:03 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B5F0444-90AB-228D-5550-5BC22A19C3C3" referredColumn="2CED85B8-D03C-0288-3538-301ED059E97E"/>
+</associations>
+</Column>
+<Column name="SEQ_CST" id="400EA667-CAD7-8249-2C5C-663CFBB24A09">
+<createdBy>USER</createdBy>
+<createdTime>2024-03-29 08:51:43 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D796539A-A671-6102-FD4E-DFABD51C3110" referredColumn="F44F3AFA-B61D-3CC5-1302-084966FB4FC4"/>
+</associations>
+</Column>
+<Column name="SCORE" id="5451EBD2-1A1D-FC1F-C9B0-6792BF570953">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-26 08:09:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[평점(최대 5점)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVIEW" id="8DB29159-31FF-F936-552C-99EB118BEF43">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-27 01:17:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[리뷰]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>1024</dataTypeSize>
+<ownDataTypeParameters>1024,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="838F152F-D3AE-EFBD-214F-258EE5234538">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-26 08:09:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8EA262E4-EE85-92A9-61BD-5B2F811963BF" name="TB_SLE_EVAL_PK">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-26 08:09:06 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C3432B3-3D19-8AAF-6CE8-4A42DF7EEE3D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A020301-AF2B-153F-4F7F-B6C2B2857FFE" name="FK1_SLE_EVAL">
+<createdBy>USER</createdBy>
+<createdTime>2024-03-29 08:51:43 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="400EA667-CAD7-8249-2C5C-663CFBB24A09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C31B48AD-AA5F-C4C0-CB74-7BB1A500C962" name="FK2_SLE_EVAL">
+<createdBy>USER</createdBy>
+<createdTime>2024-03-29 08:53:03 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87C95146-E1B8-A462-97A6-07F6BDFCDBC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

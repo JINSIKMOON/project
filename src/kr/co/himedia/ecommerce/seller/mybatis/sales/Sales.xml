@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.seller.mybatis.sales.Sales">
+	
+	<select id="select" parameterType="salesDto" resultType="salesDto">
+		SELECT
+			ROWNUM rnum
+			, corp_nm
+			, month
+			, sumSale
+		FROM
+			(
+			SELECT
+				(SELECT SLL.CORP_NM FROM TB_SLL sll)					corp_nm
+				, LPAD(EXTRACT(MONTH FROM DT_REG), 2, '0')				month
+				, SUM(buy_mst.BUY_T_PRICE)								sumSale
+			FROM
+				TB_BUY_MST buy_mst
+			WHERE
+				EXTRACT(YEAR FROM DT_REG) = #{year}
+				AND CD_STATE_PAY		= 'Y'
+				AND CD_STATE_DELIVERY	= 'Y'
+			GROUP BY
+				EXTRACT(MONTH FROM DT_REG)
+			ORDER BY
+				EXTRACT(MONTH FROM DT_REG)
+			)
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_BUY_MST
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="salesDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY corp_nm ASC) rnum
+				, corp_nm
+				, sumSale
+			FROM
+				(
+				SELECT
+					(SELECT sll.CORP_NM FROM TB_SLL sll) AS CORP_NM,
+					tb_sumSale.sumSale
+				FROM
+					(
+					SELECT
+						sum(buy_t_price)	sumSale
+					FROM
+						TB_BUY_MST
+					WHERE
+						<include refid="listWhere" />				
+					)tb_sumSale
+				)
+			)
+			<![CDATA[
+			WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+			]]>
+		ORDER BY rnum ASC
+	</select>
+	
+	<sql id="listWhere">
+		CD_STATE_PAY		= 'Y'
+		AND CD_STATE_DELIVERY	= 'Y'
+	</sql>	
+	
+</mapper>

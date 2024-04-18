@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.customer.Customer">
+
+	<select id="findPw" parameterType="java.lang.String" resultType="customerDto">							
+			SELECT				
+				ID			
+				,TO_CHAR(DT_REG,'YYYY-MM-DD')DT_REG			
+			FROM				
+				TB_CST			
+			WHERE				
+				ID = #{id}
+			AND CST_NM = #{cst_nm}			
+			AND CST_EMAIL = #{cst_email}				
+	</select>
+
+	<update id="updatePw" parameterType="customerDto">
+		UPDATE
+			TB_CST
+		SET
+			PASSWD			= #{passwd}
+		WHERE
+			ID = #{id}
+	</update>
+
+	<select id="findId" parameterType="java.lang.String" resultType="customerDto">							
+			SELECT				
+				ID			
+				,TO_CHAR(DT_REG,'YYYY-MM-DD')DT_REG			
+			FROM				
+				TB_CST			
+			WHERE				
+				CST_NM = #{cst_nm}			
+			AND CST_EMAIL = #{cst_email}				
+	</select>						
+
+	<select id="listing" parameterType="java.util.HashMap" resultType="customerDto">
+		SELECT
+			ID
+		FROM
+			TB_CST
+		WHERE
+			ID = #{id}
+	</select>
+	
+
+	<update id="update" parameterType="customerDto">
+		UPDATE
+			TB_CST
+		SET
+			PHONE			= #{phone}
+			, POSTCODE		= #{postcode}
+			, ADDR1			= #{addr1}
+			, ADDR2			= #{addr2}
+			, CST_EMAIL		= #{cst_email}
+			, DT_UPT		= SYSDATE
+			<if test="flg_sms != before_flg_sms">
+			, FLG_SMS		= #{flg_sms}
+			, DT_SMS		= SYSDATE
+			</if>
+		WHERE
+			SEQ_CST = #{seq_cst}
+	</update>
+		
+	<select id="select" resultType="customerDto" parameterType="customerDto">
+		SELECT
+			SEQ_CST, ID, PASSWD, CST_NM, PHONE, POSTCODE, ADDR1, ADDR2, CST_EMAIL, FLG_SMS, TC_STATE
+		FROM
+			TB_CST
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="customerDto">
+		INSERT INTO TB_CST
+			(SEQ_CST ,ID ,PASSWD ,TC_STATE ,CST_NM ,PHONE ,POSTCODE ,ADDR1 ,ADDR2 ,CST_EMAIL ,FLG_SMS ,DT_SMS ,FLG_USER_AGREEMENT ,DT_USER ,FLG_PERSONAL_DATA ,DT_PERSONAL ,DT_REG)
+		VALUES
+			(#{seq_cst}, #{id}, #{passwd},1, #{cst_nm}, #{phone}, #{postcode}, #{addr1}, #{addr2}, #{cst_email}, #{flg_sms}, SYSDATE, 'Y', SYSDATE, 'Y', SYSDATE ,SYSDATE)
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_CST.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

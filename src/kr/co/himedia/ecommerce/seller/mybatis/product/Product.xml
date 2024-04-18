@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.seller.mybatis.product.Product">
+	
+<!-- 	<select id="stock" parameterType="productDto" resultType="productDto">
+		SELECT
+			tb_product.count_stock - 
+		FROM
+			
+		WHERE
+			
+		ORDER BY	
+			
+	</select> -->
+	
+	<select id="listing" parameterType="productDto" resultType="productDto">
+		SELECT
+			SEQ_PRD
+			, PRD_NM
+		FROM
+			TB_PRD
+		WHERE
+			CD_STATE_PRD	= 1
+		ORDER BY	
+			DT_REG DESC
+	</select>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_PRD.NEXTVAL FROM DUAL
+		<!-- SELECT NVL(MAX(SEQ_PRD), 0) + 1 FROM TB_PRD -->
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_PRD
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="productDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY DT_REG DESC) rnum
+				, SEQ_PRD
+				, PRD_NM
+				, DESCES
+				, PRICE_COST
+				, COUNT_STOCK
+				, TO_CHAR(DT_REG, 'YYYY-MM-DD') DT_REG
+			FROM
+				TB_PRD
+			WHERE
+				<include refid="listWhere" />
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY rnum
+	</select>
+	
+	<sql id="listWhere">
+		<![CDATA[
+				FLG_DELETE <> 'Y'
+		]]>
+		<if test="searchWord != null and searchWord != ''">
+			<if test="searchKey == 'prd_nm'">
+				AND PRD_NM LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'desces'">
+				AND DESCES LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'prd_nm+desces'">
+				AND (PRD_NM LIKE '%' || #{searchWord} || '%' OR DESCES LIKE '%' || #{searchWord} || '%')
+			</if>
+		</if>
+	</sql>
+	
+	<insert id="insert" parameterType="productDto">
+		INSERT INTO TB_PRD
+			(SEQ_PRD, PRD_NM, DESCES, PRICE_COST, FLG_DELETE, CD_STATE_PRD, DT_REG)
+		VALUES
+			(#{seq_prd}, #{prd_nm}, #{desces}, #{price_cost}, 'N', 1, SYSDATE)
+	</insert>
+	
+	<select id="select" parameterType="productDto" resultType="productDto">
+		SELECT
+			SEQ_PRD
+			, PRD_NM
+			, DESCES
+			, PRICE_COST
+			, COUNT_STOCK
+			, TO_CHAR(DT_REG, 'YYYY-MM-DD HH24:MI:SS') dt_reg
+			, TO_CHAR(DT_UPT, 'YYYY-MM-DD HH24:MI:SS') dt_upt
+		FROM
+			TB_PRD
+		WHERE
+			SEQ_PRD = #{seq_prd}
+	</select>
+	
+	<update id="update" parameterType="productDto">
+		UPDATE
+			TB_PRD
+		SET
+			PRD_NM			= #{prd_nm}
+			, DESCES		= #{desces}
+			, PRICE_COST	= #{price_cost}
+			, DT_UPT		= SYSDATE
+		WHERE
+			SEQ_PRD = #{seq_prd}
+	</update>
+	
+	<delete id="deleteFlag" parameterType="productDto">
+		<!--
+		DELETE FROM TB_PRD WHERE ROWID = #{rowid}
+		-->
+		UPDATE
+			TB_PRD
+		SET
+			FLG_DELETE = 'Y'
+		WHERE
+			SEQ_PRD = #{seq_prd}
+	</delete>
+	
+</mapper>

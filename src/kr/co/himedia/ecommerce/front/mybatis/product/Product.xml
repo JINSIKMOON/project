@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.product.Product">
+
+
+	<select id="listing" parameterType="productDto" resultType="productDto">
+		SELECT
+			SEQ_PRD
+			, PRD_NM
+			, PRICE_COST
+			, PRS_IMG
+			, DESCES
+			, CTG_NO
+			, DISCOUNT
+			<!-- , (SELECT CORP_NM FROM TB_SLL tb_sll WHERE tb_sll.SEQ_SLL = tb_sle.REGISTER) CORP_NM -->
+		FROM
+			TB_PRD tb_prd
+		WHERE
+			CD_STATE_PRD = 1	
+		ORDER BY
+			SEQ_PRD
+	</select>
+	
+	<!--
+	<select id="category" parameterType="ctgDto" resultType="ctgDto">
+		SELECT LEVEL,
+            SEQ_CTG,
+			PARENTS_CTG,
+			DEPTH,
+			LPAD(' ', 0*(LEVEL-1))
+		FROM TB_CTG
+			START WITH DEPTH = 0
+			CONNECT BY PRIOR PARENTS_CTG = DEPTH
+		ORDER SIBLINGS BY
+			PARENTS_CTG DESC;
+	</select>
+	-->
+</mapper> 

@@ -1,0 +1,218 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22735B8C-5BE8-C50E-00C7-CD842E2E1A54" name="TB_BBS">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_BBS" id="F82C8E34-08D9-B8BC-2154-4114D9DC56DD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[게시판 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_CST" id="10ACF153-123B-3D53-870F-8C061059820A">
+<createdBy>pluto</createdBy>
+<createdTime>2024-03-27 05:46:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매자 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_BBS_PARENT" id="072AED0B-803C-A80C-608C-19949BBFE9F7">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[상위글 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_BBS_TYPE" id="67E1A993-CDCD-E21E-88BB-BCCBAD329516">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[게시판 구분(공지 사항: 1, QNA: 2, 리뷰: 3)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_BBS_TAB" id="30596D03-0CB0-8FDE-5BE6-8625C481AC69">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[게시판 탭(1:상품, 2:구매, 3:결제)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE" id="D881534A-9008-7067-1803-D883E412257B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[제목]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENTS" id="ACDEEA46-34E5-4FB6-D1CF-530E2193439A">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[내용]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_TOP" id="2AC80671-4A49-847E-E502-DD7C6DA1E0EC">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[최상위 여부]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_DELETE" id="9F98EE37-7371-26A9-FDE1-65857B0439BA">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[삭제 여부]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FILE_SAVE" id="72EDE5BC-A48C-15AF-998D-232F036C1388">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[저장 파일명(상태 위치 포함)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FILE_ORIG" id="B24E9558-2201-8D71-CC65-4A96CDADA5E3">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[원본 파일명]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="2EC6C6B7-B482-72E8-FD84-C7A74A68053D">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPT" id="8955FD10-5A0C-1810-E750-B9B00252CBD8">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATER" id="DF2808B9-5127-48D4-E8E6-5084E8F62242">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정자]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8A8B7382-3F29-8EC5-45E0-82912D609F4D" name="PK_BBS">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F82C8E34-08D9-B8BC-2154-4114D9DC56DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E61C9091-B7EA-16F6-DEB9-0A5D941C7F1A" name="IX1_BBS">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D881534A-9008-7067-1803-D883E412257B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3618286A-9838-C628-94D6-4F42CDA2426E" name="IX2_BBS">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:06 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACDEEA46-34E5-4FB6-D1CF-530E2193439A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

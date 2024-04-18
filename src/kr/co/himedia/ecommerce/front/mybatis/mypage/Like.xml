@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.mypage.Like">
+
+	<select id="list" parameterType="pagingDto" resultType="saleDto">
+		SELECT
+			*
+		FROM
+		(
+		SELECT
+		/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY tb_like.LIKE_CODE DESC) rnum
+			, tb_sle.SLE_NM
+			, tb_sle.IMG
+		FROM
+			TB_LIKE tb_like
+			INNER JOIN TB_SLE	tb_sle ON tb_like.SEQ_SLE = tb_sle.SEQ_SLE
+		WHERE
+			tb_like.SEQ_CST			= #{seq_cst}
+		)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY
+			rnum
+	</select>
+
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_LIKE		tb_like
+		WHERE
+			SEQ_CST = #{seq_cst}
+	</select>
+
+
+	<insert id="insert" parameterType="likeDto">
+		INSERT INTO TB_LIKE
+			(LIKE_CODE, SEQ_SLE, SEQ_CST)
+		VALUES
+			(#{like_code}, #{seq_sle}, #{seq_cst})
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_LIKE.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

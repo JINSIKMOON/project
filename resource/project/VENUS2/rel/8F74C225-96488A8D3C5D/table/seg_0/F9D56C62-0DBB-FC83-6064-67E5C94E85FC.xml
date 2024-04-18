@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F9D56C62-0DBB-FC83-6064-67E5C94E85FC" name="TB_SLL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="0AF3B26F-9D58-CA39-9401-727EF3923214">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[아이디]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWD" id="D753CBFB-756A-5AA5-FE3C-E42CCBA57EA0">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[비밀번호(해쉬 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_NM" id="7DADAE24-003A-0B57-CB53-ED0CCAD589F8">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[기업명]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_NUM" id="F73E55FB-5181-7A77-551B-385CDE0CA5B9">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[사업자 등록 번호(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CEO" id="66FDA3E0-E978-307B-6A38-0090E74FF00B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[대표자명(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_POSTCODE" id="119F08B3-9948-D39C-C5BA-FB5724B6A0EE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[사업자 우편번호]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_ADDR1" id="33CA8CED-ABA1-362B-5D85-2F2C5DD3354E">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[사업자 주소1]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_ADDR2" id="43C8F062-5E2D-B24F-1AEB-BCBC63A3C1A4">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[사업자 주소2]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORP_EMAIL" id="73982C9D-B52A-B708-EA7E-C57732D8F729">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[사업자 이메일(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="60C9CBD9-C7C0-7F0D-93B6-95576C78281B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPT" id="95CFBEEE-1EB0-6172-09AF-D8284CAC5F8E">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4A65AF42-5D9D-3C8B-96B6-8D462FAA5D9B" name="PK_SLL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:01:29 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AF3B26F-9D58-CA39-9401-727EF3923214"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

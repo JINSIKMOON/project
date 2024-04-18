@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.seller.mybatis.sellers.Seller">
+	
+	<update id="update" parameterType="sellerDto">
+		UPDATE
+			TB_SLL
+		SET
+			CORP_NM			= #{corp_nm}
+			, CEO			= #{ceo}
+			, CORP_POSTCODE	= #{corp_postcode}
+			, CORP_ADDR1	= #{corp_addr1}
+			, CORP_ADDR2	= #{corp_addr2}
+			, CORP_EMAIL	= #{corp_email}
+			, DT_UPT		= SYSDATE
+		WHERE
+			id = #{id}
+	</update>
+	
+	<select id="select" parameterType="java.lang.String" resultType="sellerDto">
+		SELECT
+			ID
+			, CORP_NM
+			, CORP_NUM
+			, CEO
+			, CORP_POSTCODE
+			, CORP_ADDR1
+			, CORP_ADDR2
+			, CORP_EMAIL
+			, CORP_INTRO
+		FROM
+			TB_SLL
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<select id="sequence" resultType="java.lang.Integer" >
+		SELECT SQ_SEQ_SLL.NEXTVAL FROM DUAL
+	</select>
+	
+	<select id="listing" parameterType="java.util.HashMap" resultType="sellerDto">
+		SELECT
+			ID
+		FROM
+			TB_SLL
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<select id="list" resultType="sellerDto">
+		SELECT
+			ID, PASSWD, CORP_NM, CORP_NUM, CEO, CORP_EMAIL, DT_REG
+		FROM
+			TB_SLL
+	</select>
+	
+	<insert id="insert" parameterType="sellerDto">
+		INSERT INTO TB_SLL
+			(ID, PASSWD, CORP_NM, CORP_NUM, CEO, CORP_POSTCODE, CORP_ADDR1, CORP_ADDR2, CORP_EMAIL, DT_REG, DT_UPT)
+		VALUES
+			(#{id}, #{passwd}, #{corp_nm}, #{corp_num}, #{ceo}, #{corp_postcode}, #{corp_addr1}, #{corp_addr2}, #{corp_email}, SYSDATE, SYSDATE)
+	</insert>	
+	
+</mapper>

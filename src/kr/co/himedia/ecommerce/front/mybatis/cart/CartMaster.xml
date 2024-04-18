@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.cart.CartMaster">
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_CART_MST
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<insert id="insert" parameterType="cartMstDto">
+		INSERT INTO TB_BUY_MST
+			(SEQ_CART_MST,ID,CART_T_COUNT,CART_T_PRICE,DT_CRE)
+		VALUES	
+			(#{seq_cart_mst}, #{id}, #{cart_t_count}, #{cart_t_price}, SYSDATE)
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_CART_MST.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

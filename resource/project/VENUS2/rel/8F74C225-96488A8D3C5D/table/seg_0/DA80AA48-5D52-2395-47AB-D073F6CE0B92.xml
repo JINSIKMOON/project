@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA80AA48-5D52-2395-47AB-D073F6CE0B92" name="TB_CART_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 07:49:34 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_CART_MST" id="D40055A9-DD98-E8C8-73CA-F472234A8E49">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:22:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[장바구니 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID" id="2FCEAFB6-8CD4-82BC-8E33-83EAC95D6019">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 08:04:01 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F477BF06-6A09-3924-EE76-6CA43C46FC2E" referredColumn="EBEC004B-95DF-4E22-12DD-F2892F0C68F6"/>
+</associations>
+</Column>
+<Column name="CART_T_COUNT" id="2A8B3E69-3BF1-A279-5891-B6A4DFC2F756">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 08:00:01 UTC</createdTime>
+<commentInRDBMS><![CDATA[상품개수]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CART_T_PRICE" id="BF953007-CF47-A0F8-0CD2-D61738C1ABCD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:37:17 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_CRE" id="C211DD29-66C5-7732-A51D-264E49F620EE">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 08:02:01 UTC</createdTime>
+<commentInRDBMS><![CDATA[생성일자]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A59E6765-08D8-9E04-2ED8-866193A8FC33" name="PK_CART_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 07:49:34 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D40055A9-DD98-E8C8-73CA-F472234A8E49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1B0DF9F-D633-5AF9-E78D-1DB0ED8EC5EE" name="FK1_CART_MST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 08:03:35 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FCEAFB6-8CD4-82BC-8E33-83EAC95D6019"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

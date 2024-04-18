@@ -1,0 +1,252 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2E9CDB3B-2E27-6AB4-4DBC-BA9B865AE09E" name="TB_CST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_CST" id="F44F3AFA-B61D-3CC5-1302-084966FB4FC4">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[구매자 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID" id="EBEC004B-95DF-4E22-12DD-F2892F0C68F6">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[아이디]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWD" id="23B9EA8F-2C2E-CD1C-7610-41B6CC094A27">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[비밀번호(해쉬 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TC_STATE" id="F7559A5D-B52C-5C23-DF61-D609F67492BA">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[통합 상태 코드(대기:0, 사용:1, 탈퇴:2, 강퇴:3)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CST_NM" id="6C45CFAF-8439-FA97-3E7B-A7C9F95B124D">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[성명(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE" id="34F1EA16-9AA5-44E1-458D-914DF4AEC6C3">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[연락처(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTCODE" id="A6D9D4C0-FC5D-8444-94A3-FC7C47B6825A">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[우편번호(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDR1" id="55E7F4CE-828A-163C-F4D7-EF149CFE7460">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[주소1(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDR2" id="3BAF2E1B-3EBA-7C17-DE69-7FB2195AF1AD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[주소2(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CST_EMAIL" id="91943F4D-C39F-4B37-FCF2-5E226DD8FFC4">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[이메일(대칭키 암호화)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_SMS" id="2EA763AB-8DCE-11C7-56B3-5469B6242E7F">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[SMS 수신 동의]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_SMS" id="0852ED64-9766-A03F-B27F-5B9FC5BF2D34">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[SMS 수신 설정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_USER_AGREEMENT" id="850E5EA6-5570-288F-AD11-FC4BF92648E1">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:25:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[이용약관 동의 (Y,N)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_USER" id="DB67AAC3-5D94-23C5-4666-820CF03AA233">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:25:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[이용약관 동의 설정일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_PERSONAL_DATA" id="3F11DA17-6851-00CC-FAD4-0F7C0A9698E2">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:25:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[개인정보 동의 (Y,N)]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_PERSONAL" id="DE96710F-FAAA-A0C8-398A-DEF39EBBBE94">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:25:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[개인정보동의 설정일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="2DE06FC0-F0F4-C9BE-72D6-8873AA3E396D">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPT" id="738BA9EA-21A2-B3F5-79FF-FE1E32259DF6">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7797BB2C-C9B5-A689-77CC-E1B5EBCC39E6" name="PK_CST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F44F3AFA-B61D-3CC5-1302-084966FB4FC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E267070-1E27-1D00-1A4E-E300EE399BD8" name="UQ1_CST">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:49 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBEC004B-95DF-4E22-12DD-F2892F0C68F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

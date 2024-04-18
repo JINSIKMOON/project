@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fWayevYNuEa-MKBV5-Tn7Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="http://venus.sn.himedia.co.kr:8081/seller/sale/list.web" CvTextArea="518, 428, 112, 19" CvTextArgument="2l#(HH# ¥g)]" CvType="Text" DesignTimeRectangle="480, 430, 150, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'[구매 현황(배송 포함)]'" FullSelectorArgument="&lt;webctrl aaname='[구매 현황(배송 포함)]' parentid='frmMain' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='[구매 현황(배송 포함)]' parentid='frmMain' tag='A' type='' class='menuLnb' check:innerText='[구매 현황(배송 포함)]' /&gt;" Guid="c2d6fb61-c597-496a-9298-a3fce70a5435" ScopeSelectorArgument="&lt;html app='chrome.exe' title='::: Sellers for HAPPY FINFIN(Jasper JSP 2.3 Engine) :::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9dda4521d083c5319a44291150497133.png" xmlns="">0c5nYDkJ1nUy-Wd_PXtvxEQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

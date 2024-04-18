@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.sale.Sale">
+	
+	<select id="main" parameterType="pagingDto" resultType="saleDto">
+		SELECT
+			SEQ_SLE
+			, SEQ_PRD
+			, SLE_NM
+			, PRICE_SALE
+			, IMG
+			, DESCES
+			
+		FROM
+			TB_SLE tb_sle
+		WHERE
+			FLG_DISCOUNT		='Y'
+			AND CD_STATE_SALE	= 1
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_SLE
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="saleDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY 
+				<choose>
+				<when test="searchOption == 'dt_reg desc'">DT_REG DESC</when>
+				<when test="searchOption == 'price_sale asc'">PRICE_SALE ASC</when>
+				<when test="searchOption == 'price_sale desc'">PRICE_SALE DESC</when>
+				<otherwise>DT_REG DESC</otherwise>
+				</choose>
+				) rnum
+				, SEQ_SLE
+				, SEQ_PRD
+				, SLE_NM
+				, CTG_NO
+				, IMG
+				, PRICE_SALE
+				, TO_CHAR(DT_REG, 'YYYY-MM-DD') DT_REG
+			FROM
+				TB_SLE
+			WHERE
+				<include refid="listWhere" />
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY rnum 
+	</select>
+	
+	<sql id="listWhere">
+		<![CDATA[
+				CD_STATE_SALE = 1
+		]]>
+		<if test="ctg_no != null and ctg_no != ''">
+				AND CTG_NO LIKE #{ctg_no} || '%' 
+		</if>
+		<if test="searchWord != null and searchWord != ''">
+			<if test="searchKey == 'sle_nm'">
+				AND SLE_NM LIKE '%' || #{searchWord} || '%'
+			</if>
+		</if>
+	</sql>
+
+	<select id="select" parameterType="saleDto" resultType="saleDto">
+		SELECT
+			SEQ_SLE
+			, SEQ_PRD
+			, SLE_NM
+			, PRICE_SALE
+			, IMG
+			, DESCES
+			, FLG_DISCOUNT
+			<!-- , (SELECT CORP_NM FROM TB_SLL tb_sll WHERE tb_sll.SEQ_SLL = tb_sle.REGISTER) CORP_NM
+			, REGISTER seq_sll -->
+		FROM
+			TB_SLE tb_sle
+		WHERE
+			SEQ_SLE				= #{seq_sle}
+			AND CD_STATE_SALE	= 1
+	</select>
+	
+	<select id="listing" parameterType="saleDto" resultType="saleDto">
+		SELECT
+			ROWNUM rnum 
+			, SEQ_SLE
+			, SEQ_PRD
+			, SLE_NM
+			, PRICE_SALE
+			, IMG
+			, CTG_NO
+			<!-- , (SELECT CORP_NM FROM TB_SLL tb_sll WHERE tb_sll.SEQ_SLL = tb_sle.REGISTER) CORP_NM -->
+		FROM
+			TB_SLE tb_sle
+		WHERE
+			CD_STATE_SALE = 1
+			 AND (CTG_NO LIKE #{ctg_no} || '%')
+
+		ORDER BY
+			SEQ_SLE
+	</select>
+	
+	<select id="salelisting" parameterType="saleDto" resultType="saleDto">
+		SELECT
+			ROWNUM rnum 
+			, SEQ_SLE
+			, SEQ_PRD
+			, SLE_NM
+			, PRICE_SALE
+			, IMG
+			, CTG_NO
+			<!-- , (SELECT CORP_NM FROM TB_SLL tb_sll WHERE tb_sll.SEQ_SLL = tb_sle.REGISTER) CORP_NM -->
+		FROM
+			TB_SLE tb_sle
+		WHERE
+			CD_STATE_SALE = 1
+			<if test="searchWord != null and searchWord != ''">
+				<if test="searchKey == 'sle_nm'">
+					AND UPPER(SLE_NM) LIKE UPPER('%' || #{searchWord} || '%')
+				</if>
+			</if>
+			<if test="searchWord != null and searchWord != ''">
+				<if test="searchKey == 'ctg_no'">
+					AND CTG_NO LIKE (#{searchWord} || '%')
+				</if>
+			</if>
+		ORDER BY
+			SEQ_SLE
+	</select>
+		
+	
+</mapper>

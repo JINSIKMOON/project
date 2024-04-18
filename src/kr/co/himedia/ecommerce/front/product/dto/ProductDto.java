@@ -1,0 +1,134 @@
+/**
+ * YOU ARE STRICTLY PROHIBITED TO COPY, DISCLOSE, DISTRIBUTE, MODIFY OR USE THIS PROGRAM
+ * IN PART OR AS A WHOLE WITHOUT THE PRIOR WRITTEN CONSENT OF HIMEDIA.CO.KR.
+ * HIMEDIA.CO.KR OWNS THE INTELLECTUAL PROPERTY RIGHTS IN AND TO THIS PROGRAM.
+ * COPYRIGHT (C) 2024 HIMEDIA.CO.KR ALL RIGHTS RESERVED.
+ *
+ * 하기 프로그램에 대한 저작권을 포함한 지적재산권은 himedia.co.kr에 있으며,
+ * himedia.co.kr이 명시적으로 허용하지 않는 사용, 복사, 변경 및 제 3자에 의한 공개, 배포는 엄격히 금지되며
+ * himedia.co.kr의 지적재산권 침해에 해당된다.
+ * Copyright (C) 2024 himedia.co.kr All Rights Reserved.
+ *
+ *
+ * Program		: kr.co.himedia.sn.ecommerce5th.mercury
+ * Description	:
+ * Environment	: JRE 1.7 or more
+ * File			: ProductDto.java
+ * Notes		:
+ * History		: [NO][Programmer][Description]
+ *				: [20240307113411][wlstlr@himedia.co.kr][CREATE: Initial Release]
+ */
+package kr.co.himedia.ecommerce.front.product.dto;
+
+/**
+ * @version 1.0.0
+ * @author wlstlr@himedia.co.kr
+ * 
+ * @since 2024-03-07
+ * <p>DESCRIPTION:</p>
+ * <p>IMPORTANT:</p>
+ */
+public class ProductDto {
+
+	private int seq_prd;
+	private int seq_ctg;
+	private String prd_nm;
+	private int ctg_no;
+	private String prd_img;
+	private String desces;
+	private int price_cost;
+	private int delivery_price;
+	private int count_stack;
+	private int cd_state_prd;
+	private int discount;
+	private String flg_delete;
+	private int dt_reg;
+	private int dt_upt;
+	
+	public int getSeq_prd() {
+		return seq_prd;
+	}
+	public int getCtg_no() {
+		return ctg_no;
+	}
+	public void setCtg_no(int ctg_no) {
+		this.ctg_no = ctg_no;
+	}
+	public void setSeq_prd(int seq_prd) {
+		this.seq_prd = seq_prd;
+	}
+	public int getSeq_ctg() {
+		return seq_ctg;
+	}
+	public void setSeq_ctg(int seq_ctg) {
+		this.seq_ctg = seq_ctg;
+	}
+	public String getPrd_nm() {
+		return prd_nm;
+	}
+	public void setPrd_nm(String prd_nm) {
+		this.prd_nm = prd_nm;
+	}
+	public String getPrd_img() {
+		return prd_img;
+	}
+	public void setPrd_img(String prd_img) {
+		this.prd_img = prd_img;
+	}
+	public String getDesces() {
+		return desces;
+	}
+	public void setDesces(String desces) {
+		this.desces = desces;
+	}
+	public int getPrice_cost() {
+		return price_cost;
+	}
+	public void setPrice_cost(int price_cost) {
+		this.price_cost = price_cost;
+	}
+	public int getDelivery_price() {
+		return delivery_price;
+	}
+	public void setDelivery_price(int delivery_price) {
+		this.delivery_price = delivery_price;
+	}
+	public int getCount_stack() {
+		return count_stack;
+	}
+	public void setCount_stack(int count_stack) {
+		this.count_stack = count_stack;
+	}
+	public int getCd_state_prd() {
+		return cd_state_prd;
+	}
+	public void setCd_state_prd(int cd_state_prd) {
+		this.cd_state_prd = cd_state_prd;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+	public String getFlg_delete() {
+		return flg_delete;
+	}
+	public void setFlg_delete(String flg_delete) {
+		this.flg_delete = flg_delete;
+	}
+	public int getDt_reg() {
+		return dt_reg;
+	}
+	public void setDt_reg(int dt_reg) {
+		this.dt_reg = dt_reg;
+	}
+	public int getDt_upt() {
+		return dt_upt;
+	}
+	public void setDt_upt(int dt_upt) {
+		this.dt_upt = dt_upt;
+	}
+	
+	
+}

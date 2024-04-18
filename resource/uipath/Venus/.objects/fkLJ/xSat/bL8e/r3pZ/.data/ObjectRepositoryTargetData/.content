@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="C6IhLNdSZE2N0qPi_BRkvw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="http://venus.sn.himedia.co.kr:8081/seller/product/list.web" DesignTimeRectangle="1141, 178, 39, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'[판매]'" FullSelectorArgument="&lt;webctrl aaname='[판매]' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='[판매]' tag='A' type='' class='' check:innerText='[판매]' /&gt;" Guid="f4efced7-f903-45c5-b7ad-208c5eee1127" ScopeSelectorArgument="&lt;html app='chrome.exe' title='::: Sellers for HAPPY FINFIN(Jasper JSP 2.3 Engine) :::' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7d04569844b9ac755b61caec7f7ffbb9.png" xmlns="">0jN2SiCFBr0C7ImjCokcpnQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

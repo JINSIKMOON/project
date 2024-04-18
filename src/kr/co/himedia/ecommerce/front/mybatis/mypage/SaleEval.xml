@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.front.mybatis.mypage.SaleEval">
+	
+	<select id="review" parameterType="pagingDto" resultType="saleEvalDto">
+		SELECT
+			*
+		FROM
+		(
+		SELECT
+			/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY tb_sle_eval.DT_REG DESC) rnum
+			,SEQ_SLE_EVAL
+			, SEQ_SLE
+			, (SELECT tb_sle.sle_nm FROM TB_SLE tb_sle WHERE tb_sle.SEQ_SLE = tb_sle_eval.SEQ_SLE) sle_nm
+			, SEQ_CST
+			, SCORE
+			, REVIEW
+			, TO_CHAR(TB_SLE_EVAL.DT_REG, 'YYYY-MM-DD') DT_REG
+		FROM
+			TB_SLE_EVAL tb_sle_eval
+		WHERE
+			SEQ_CST			= #{seq_cst}
+		)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY
+			rnum
+	</select>
+	
+	<select id="average" parameterType="saleEvalDto" resultType="saleEvalDto">
+		SELECT
+			NVL(sum(score) / count(seq_sle_eval), 0) average
+			, count(seq_sle_eval) customer
+		FROM
+			TB_SLE_EVAL tb_sle_eval
+		WHERE
+			SEQ_SLE = #{seq_sle}
+	</select>
+	
+	<select id="select" parameterType="pagingDto" resultType="saleEvalDto">
+		SELECT
+			SEQ_SLE_EVAL
+			, SEQ_SLE
+			, SEQ_CST
+			, SCORE
+			, REVIEW
+			, (SELECT tb_cst.ID FROM TB_CST tb_cst WHERE tb_cst.SEQ_CST = tb_sle_eval.SEQ_CST) id
+			, TO_CHAR(TB_SLE_EVAL.DT_REG, 'YYYY-MM-DD') DT_REG
+		FROM
+			TB_SLE_EVAL tb_sle_eval
+		WHERE
+			SEQ_SLE			= #{seq_sle}
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_SLE_EVAL		tb_sle_eval
+		WHERE
+			SEQ_CST = #{seq_cst}
+	</select>
+	
+	<!-- <select id="list" parameterType="saleEvalDto" resultType="saleEvalDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY sle_eval.DT_REG DESC) rnum
+				,tb_sle_eval.SEQ_SLE
+				,tb_sle_eval.SCORE
+				,tb_sle_eval.REVIEW
+				,TO_CHAR(tb_sle_eval.DT_REG, 'YYYY-MM-DD') DT_REG
+			FROM
+				TB_SLE_EVAL		tb_sle_eval
+				INNER JOIN TB_BUY_MST	tb_buy_mst ON tb_buy_mst.SEQ_CST = tb_sle_eval.SEQ_CST
+			WHERE
+				tb_buy_mst.CD_STATE_PAY = 'Y'
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY rnum
+	</select> -->
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_SLE_EVAL.NEXTVAL FROM DUAL
+	</select>
+
+	<insert id="insert" parameterType="saleEvalDto">
+		INSERT INTO TB_SLE_EVAL
+			(SEQ_SLE_EVAL, SEQ_SLE, SEQ_CST, SCORE, REVIEW, DT_REG)
+		VALUES
+			(#{seq_sle_eval}, #{seq_sle}, #{seq_cst}, #{score}, #{review}, SYSDATE)
+	</insert>
+</mapper> 

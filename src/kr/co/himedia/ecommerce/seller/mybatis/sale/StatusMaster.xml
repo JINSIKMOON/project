@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.seller.mybatis.sale.StatusMaster">
+
+	<select id="select" parameterType="statusMstDto" resultType="statusMstDto">
+		SELECT
+			SEQ_BUY_MST
+			, BUY_INFO
+			, BUY_T_COUNT
+			, BUY_T_PRICE
+			, CD_STATE_PAY
+			, CD_STATE_DELIVERY
+			, TO_CHAR(DT_REG, 'YYYY-MM-DD HH24:MI:SS') DT_REG
+			, TO_CHAR(DT_UPT, 'YYYY-MM-DD HH24:MI:SS') DT_UPT
+			, (SELECT CST_NM FROM TB_CST tb_cst WHERE tb_cst.SEQ_CST = tb_buy_mst.SEQ_CST) CST_NM
+		FROM
+			TB_BUY_MST
+		WHERE
+			SEQ_BUY_MST = #{seq_buy_mst}
+	</select>
+	
+	<update id="update" parameterType="statusMstDto">
+		UPDATE
+			TB_BUY_MST
+		SET
+			CD_STATE_PAY			= #{cd_state_pay}
+			, CD_STATE_DELIVERY		= #{cd_state_delivery}
+			, DT_UPT				= SYSDATE
+		WHERE
+			SEQ_BUY_MST = #{seq_buy_mst}
+	</update>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_BUY_MST
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="statusMstDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY DT_REG DESC) rnum
+				, SEQ_BUY_MST
+				, BUY_INFO
+				, BUY_T_COUNT
+				, BUY_T_PRICE
+				, DECODE(CD_STATE_PAY, 'N', '결제 전', 'Y', '결제 완료', 'C', '결제 취소', '기타')	STATE_PAY_NM
+				, DECODE(CD_STATE_DELIVERY, 'P', '준비중', 'D', '배송중', 'Y', '배송 완료', '기타')	STATE_DELIVERY_NM
+				, CD_STATE_DELIVERY
+				, TO_CHAR(DT_REG, 'YYYY-MM-DD HH24:MI:SS') DT_REG
+				, (SELECT CST_NM FROM TB_CST tb_cst WHERE tb_cst.SEQ_CST = tb_buy_mst.SEQ_CST) CST_NM
+			FROM
+				TB_BUY_MST
+				<include refid="listWhere" />
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY rnum
+	</select>
+		
+	<sql id="listWhere">
+		<if test="searchWord != null and searchWord != ''">
+			<if test="searchKey == 'buy_info'">
+				WHERE BUY_INFO LIKE '%' || #{buy_info} || '%'
+			</if>
+			<if test="searchKey == 'x_prd_nm'">
+				WHERE X_SLE_NM LIKE '%' || #{searchWord} || '%'
+			</if>
+		</if>
+	</sql>
+	
+</mapper>

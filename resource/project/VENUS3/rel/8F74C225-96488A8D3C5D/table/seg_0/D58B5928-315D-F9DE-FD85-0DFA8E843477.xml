@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D58B5928-315D-F9DE-FD85-0DFA8E843477" name="TB_PRD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_PRD" id="8E357C5D-21D0-6DAC-3EB7-CD39D3E6DD9B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[상품 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CTG_NO" id="B696C110-DBA1-2664-2F06-93C2608D4346">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[카테고리 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRD_NM" id="6743D883-C459-3F0D-2431-B07DD348F7D1">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[상품명]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRD_IMG" id="2B028065-D2C2-B7B9-088C-2B7E5208624B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:08:58 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCES" id="7257CC9F-9B63-13C6-1CD8-D426AB9D08DB">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[설명]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>1024</dataTypeSize>
+<ownDataTypeParameters>1024,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRICE_COST" id="B9E1B4EC-969D-2D3C-BACD-4888B75ABF0C">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[매입 가격(원가)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNT_STACK" id="067BF81B-7442-D70E-3FE1-C9C449E20FCD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[재고 수량]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_STATE_PRD" id="3C0ABA05-E68B-335A-07B0-007C376B3701">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[상품 상태 코드(대기:0, 사용중:1, 중지:2)]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISCOUNT" id="3B4F38F4-9CF3-8676-5168-8C7A25DD6A24">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:08:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[배송비]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_DELETE" id="DDD95694-34DD-10E6-0189-0A378C40243B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[삭제 여부]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_REG" id="0523AAC4-D172-8E2B-89B1-B109A48BF087">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[등록 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_UPT" id="9904DB7D-6397-68DB-55DC-54E0485DC382">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[수정 일시]]></commentInRDBMS>
+<ownerDesignName>VENUS3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2AF8C594-2B71-0C6E-73F6-D00F1E3E8104" name="PK_PRD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:00:08 UTC</createdTime>
+<ownerDesignName>VENUS3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E357C5D-21D0-6DAC-3EB7-CD39D3E6DD9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

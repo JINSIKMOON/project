@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.common.mybatis.board.Board">
+	
+	<select id="mylist" parameterType="pagingDto" resultType="boardDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY bbs.DT_REG DESC) rnum
+				, bbs.SEQ_BBS
+				, (SELECT bbs_self.SEQ_BBS from TB_BBS bbs_self where bbs_self.seq_bbs_parent = bbs.seq_bbs) seq_reply
+				, bbs.TITLE
+				, bbs.CONTENTS
+				, TO_CHAR(bbs.DT_REG, 'YYYY-MM-DD') DT_REG
+			FROM
+				TB_BBS bbs 
+			WHERE
+				SEQ_CST = ${seq_cst}
+				)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY RNUM
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_BBS bbs
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="boardDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY bbs.FLG_TOP, bbs.DT_REG DESC) rnum
+				, bbs.SEQ_BBS
+				, (SELECT bbs_self.SEQ_BBS from TB_BBS bbs_self where bbs_self.seq_bbs_parent = bbs.seq_bbs) seq_reply
+				, bbs.CD_BBS_TAB
+				, bbs.TITLE
+				, bbs.CONTENTS
+				, bbs.FLG_TOP
+				, (SELECT ID FROM TB_CST WHERE SEQ_CST = bbs.SEQ_CST) id
+				, TO_CHAR(bbs.DT_REG, 'YYYY-MM-DD') DT_REG
+			FROM
+				TB_BBS bbs 
+			WHERE
+				<include refid="listWhere" />
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY FLG_TOP, RNUM
+	</select>
+	
+	<sql id="listWhere">
+			<![CDATA[
+			bbs.SEQ_BBS_PARENT = 0
+			AND bbs.FLG_DELETE <> 'Y'
+			AND bbs.CD_BBS_TYPE = #{cd_bbs_type}
+			]]>
+		<if test="searchWord != null and searchWord != ''">
+			<if test="searchKey == 'title'">
+				AND bbs.TITLE LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'contents'">
+				AND bbs.CONTENTS LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'title+contents'">
+				AND (bbs.TITLE LIKE '%' || #{searchWord} || '%' OR bbs.CONTENTS LIKE '%' || #{searchWord} || '%')
+			</if>
+		</if>
+	</sql>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_BBS.NEXTVAL FROM DUAL
+	</select>
+	
+	<insert id="insert" parameterType="boardDto">
+    INSERT INTO TB_BBS
+        (SEQ_BBS, SEQ_CST, SEQ_BBS_PARENT, CD_BBS_TYPE, CD_BBS_TAB, TITLE, CONTENTS, FILE_SAVE, FILE_ORIG, FLG_TOP, FLG_DELETE, SECRET, DT_REG)
+    VALUES
+        (#{seq_bbs}, #{seq_cst}, #{seq_bbs_parent}, #{cd_bbs_type}, #{cd_bbs_tab}, #{title}, #{contents}, #{file_save}, #{file_orig}, #{flg_top}, 'N', #{secret}, SYSDATE)
+</insert>
+	
+	<select id="select" parameterType="boardDto" resultType="boardDto">
+		SELECT
+			bbs.SEQ_BBS
+			, bbs.SEQ_CST
+			, bbs.CD_BBS_TYPE
+			, bbs.CD_BBS_TAB
+			, bbs.TITLE
+			, bbs.CONTENTS
+			, bbs.FLG_TOP
+			, bbs.SECRET
+			, bbs.FILE_SAVE
+			, bbs.FILE_ORIG
+			, TO_CHAR(bbs.DT_REG, 'YYYY-MM-DD HH24:MI:SS') dt_reg
+			, TO_CHAR(bbs.DT_UPT, 'YYYY-MM-DD HH24:MI:SS') dt_upt
+			, (SELECT bbs_self.CONTENTS from TB_BBS bbs_self where bbs_self.seq_bbs_parent = bbs.seq_bbs) contents_reply
+		FROM
+			TB_BBS bbs
+		WHERE
+			SEQ_BBS = #{seq_bbs}
+	</select>
+	
+	<update id="update" parameterType="boardDto">
+		UPDATE
+			TB_BBS
+		SET
+			CD_BBS_TYPE	= #{cd_bbs_type}
+			, TITLE		= #{title}
+			, CONTENTS	= #{contents}
+			, FLG_TOP	= #{flg_top}
+			, DT_UPT	= SYSDATE
+			, UPDATER	= #{updater}
+			 <if test="file_save != null and file_save != ''">
+            , FILE_SAVE = #{file_save}
+        	</if>
+        	<if test="file_orig != null and file_orig != ''">
+            , FILE_ORIG = #{file_orig}
+        	</if>
+		WHERE
+			SEQ_BBS = #{seq_bbs}
+	</update>
+	
+	<select id="checkSecret" parameterType="boardDto" resultType="boardDto">
+			SELECT				
+			bbs.SEQ_BBS
+			, bbs.CD_BBS_TYPE
+			, bbs.CD_BBS_TAB
+			, bbs.TITLE
+			, bbs.CONTENTS
+			, bbs.FLG_TOP
+			, bbs.SECRET
+			, bbs.FILE_SAVE
+			, bbs.FILE_ORIG
+			, TO_CHAR(bbs.DT_REG, 'YYYY-MM-DD HH24:MI:SS') dt_reg
+			, TO_CHAR(bbs.DT_UPT, 'YYYY-MM-DD HH24:MI:SS') dt_upt
+			, (SELECT bbs_self.CONTENTS from TB_BBS bbs_self where bbs_self.seq_bbs_parent = bbs.seq_bbs) contents_reply		
+			FROM				
+				TB_BBS bbs		
+			WHERE				
+				SEQ_BBS		= #{seq_bbs}
+				AND SECRET	= #{secret}
+	</select>						
+	
+	<update id="deleteFlag" parameterType="boardDto">
+		UPDATE
+			TB_BBS
+		SET
+			FLG_DELETE 	= 'Y'
+			, DT_UPT	= SYSDATE
+			, UPDATER	= #{updater}
+		WHERE
+			SEQ_BBS = #{seq_bbs}
+	</update>
+	
+</mapper>

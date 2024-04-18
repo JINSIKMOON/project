@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="85C59C79-B311-6F7B-99B0-7E2A0B5088BE" containerWithKeyObject="73936873-D674-0D8C-0967-474892AC60DF" localFKIndex="CF288BEB-8549-C639-62A9-DFCA0A050BF2" name="FK3_BUY_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 02:39:02 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<referredTableLongName>TB_SLE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6251AACF-E1A0-5372-B694-74EA40967459</referredTableID>
+<keyObject>A5071411-7864-7097-0947-E7E54C31501A</keyObject>
+<referredKeyID>A5071411-7864-7097-0947-E7E54C31501A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SEQ_SLE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

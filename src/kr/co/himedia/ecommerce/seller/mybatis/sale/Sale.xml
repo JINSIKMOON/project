@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.himedia.ecommerce.seller.mybatis.sale.Sale">
+	
+	<update id="update" parameterType="saleDto">
+		UPDATE
+			TB_SLE
+		SET
+			SLE_NM				= #{sle_nm}
+			, DESCES			= #{desces}
+			, CTG_NO			= #{ctg_no}
+			, PRICE_SALE		= #{price_sale}
+			, CD_STATE_SALE		= #{cd_state_sale}
+			, DT_UPT			= SYSDATE
+		WHERE
+			SEQ_SLE				= #{seq_sle}
+			AND SEQ_PRD			= #{seq_prd}
+	</update>
+	
+	<select id="select" parameterType="saleDto" resultType="saleDto">
+		SELECT
+			SEQ_SLE
+			, SEQ_PRD 
+			, SLE_NM
+			, CTG_NO
+			, IMG
+			, DESCES
+			, PRICE_SALE
+			, CD_STATE_SALE
+			, DT_SALE_START
+			, DT_SALE_END
+			, DT_REG
+			, DT_UPT
+		FROM
+			TB_SLE
+		WHERE
+			SEQ_SLE = #{seq_sle}
+	</select>
+	
+	<select id="sequence" resultType="java.lang.Integer" >
+		SELECT SQ_SEQ_SLE.NEXTVAL FROM DUAL
+	</select>
+	
+	<select id="count" parameterType="pagingDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ROWNUM)
+		FROM
+			TB_SLE
+		WHERE
+			<include refid="listWhere" />
+	</select>
+	
+	<select id="list" parameterType="pagingDto" resultType="saleDto">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				/*+ first_rows(10) */ ROW_NUMBER() OVER (ORDER BY DT_REG DESC) rnum
+				, SEQ_SLE
+				, SEQ_PRD
+				, SLE_NM
+				, PRICE_SALE
+				, CD_STATE_SALE
+				, TO_CHAR(DT_REG, 'YYYY-MM-DD HH24:MI:SS') DT_REG
+			FROM
+				TB_SLE
+			WHERE
+				<include refid="listWhere" />
+			)
+		<![CDATA[
+		WHERE rnum >= (${currentPage} - 1) * ${linePerPage} + 1 AND rnum <= ${currentPage} * ${linePerPage}
+		]]> 
+		ORDER BY rnum
+	</select>
+	
+	<sql id="listWhere">
+		<![CDATA[
+				CD_STATE_SALE IN (0, 1, 2)
+		]]>
+		<if test="searchWord != null and searchWord != ''">
+			<if test="searchKey == 'sle_nm'">
+				AND SLE_NM LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'desces'">
+				AND DESCES LIKE '%' || #{searchWord} || '%'
+			</if>
+			<if test="searchKey == 'sle_nm+desces'">
+				AND (PRD_NM LIKE '%' || #{searchWord} || '%' OR DESCES LIKE '%' || #{searchWord} || '%')
+			</if>
+		</if>
+	</sql>
+	
+	<insert id="insert" parameterType="saleDto">
+		INSERT INTO TB_SLE
+			(SEQ_SLE, SEQ_PRD, SLE_NM, CTG_NO, IMG, DESCES, PRICE_SALE, CD_STATE_SALE, DT_SALE_START, DT_SALE_END, DT_REG)
+		VALUES
+			(#{seq_sle}, #{seq_prd}, #{sle_nm}, #{ctg_no}, #{img}, #{desces}, #{price_sale}, #{cd_state_sale}, #{dt_sale_start}, #{dt_sale_end}, SYSDATE)
+	</insert>	
+	
+</mapper>

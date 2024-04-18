@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="26DA092C-F0B3-D649-53C8-EC28B169BA83" name="TB_CART_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:33:09 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<ordsAlias>tb_cartv1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SEQ_CART_DTL" id="0F3DD11B-65A5-8D1D-4442-16915801CF6B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:33:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[장바구니 일련번호]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEQ_CART_MST" id="44FD952E-68B1-151B-9EB7-A0D0A3316EE5">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:32:02 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4E45DC55-618B-48E1-6AC4-1F16B44E60E6" referredColumn="D40055A9-DD98-E8C8-73CA-F472234A8E49"/>
+</associations>
+</Column>
+<Column name="SEQ_PRD" id="9E9AEB6A-4691-07B4-71FB-ECCC07FFE508">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:20:31 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0D2A133A-584B-22C0-A7CF-2FC45775F0A9" referredColumn="8E357C5D-21D0-6DAC-3EB7-CD39D3E6DD9B"/>
+</associations>
+</Column>
+<Column name="SEQ_SLE" id="ADA5DB8F-139E-3B95-CFFB-0B3724C85025">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:20:06 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D66AB583-8A78-F435-2DD3-77A7D7D8DF5A" referredColumn="2CED85B8-D03C-0288-3538-301ED059E97E"/>
+</associations>
+</Column>
+<Column name="COUNT" id="41F99178-FE62-1E07-B665-7695C5DD8B7B">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:33:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[상품개수]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRICE" id="4C398235-8164-757D-8F58-209E74144834">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:29:33 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FLG_DELETE" id="09ACEF90-57F3-172D-43A7-E5A552AB80CD">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:36:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[삭제여부]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_CRE" id="40443DCE-247D-73B2-E4A0-D8C23F9790D8">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:33:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[생성일자]]></commentInRDBMS>
+<ownerDesignName>VENUS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E54CC83-9F40-C8F2-974B-2522A5C60564" name="PK_CART_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-22 09:33:09 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F3DD11B-65A5-8D1D-4442-16915801CF6B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F35D97E-84DC-571D-25B1-B2181701812B" name="FK1_CART_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:20:06 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ADA5DB8F-139E-3B95-CFFB-0B3724C85025"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4FB27ABA-DC65-BD41-569A-F71112F057FA" name="FK2_CART_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:20:31 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E9AEB6A-4691-07B4-71FB-ECCC07FFE508"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D29CA099-3E84-FAED-3CC7-B8B7D80AD80E" name="FK3_CART_DTL">
+<createdBy>USER</createdBy>
+<createdTime>2024-02-23 01:32:02 UTC</createdTime>
+<ownerDesignName>VENUS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44FD952E-68B1-151B-9EB7-A0D0A3316EE5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

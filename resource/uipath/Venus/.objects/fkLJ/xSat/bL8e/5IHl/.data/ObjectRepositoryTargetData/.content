@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7DXKpvaVpkCr5OePtbP2rg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="http://venus.sn.himedia.co.kr:8081/seller/login/loginForm.web" CvElementArea="922, 504, 76, 36" CvTextArea="938, 513, 42, 16" CvTextArgument="219l" CvType="Button" DesignTimeRectangle="923, 506, 74, 33" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'로그인'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='button' class='' aaname='로그인' check:text='로그인' /&gt;" Guid="16176c4a-ff1d-4c3f-bc48-069f4c64ccc6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='::: Sellers for HAPPY FINFIN(Jasper JSP 2.3 Engine) :::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="601d46c45e173512e2d2d42e56ffdc8c.png" xmlns="">0H6R2Qo3jikScrv0_RZ3rqg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
